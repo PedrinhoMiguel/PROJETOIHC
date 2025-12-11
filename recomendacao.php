@@ -1,0 +1,266 @@
+<?php
+// Tipos de corpo e recomendações
+$tipos_corpo = [
+    "triangulo" => [
+        "nome" => "Triângulo (Pera)",
+        "descricao" => "Quadris mais largos que os ombros",
+        "caracteristicas" => ["Quadris largos", "Cintura definida", "Ombros estreitos"],
+        "dicas" => [
+            "Balanceie a silhueta destacando a parte superior",
+            "Use decotes e mangas volumosas",
+            "Evite calças muito justas nos quadris"
+        ]
+    ],
+    "retangulo" => [
+        "nome" => "Retângulo",
+        "descricao" => "Ombros e quadris alinhados, cintura pouco definida",
+        "caracteristicas" => ["Silhueta reta", "Pouca definição de cintura", "Ombros e quadris alinhados"],
+        "dicas" => [
+            "Crie curvas com cortes que marcam a cintura",
+            "Use cintos e peças com drapeados",
+            "Experimente saias evasê e calças wide leg"
+        ]
+    ],
+    "triangulo_invertido" => [
+        "nome" => "Triângulo Invertido",
+        "descricao" => "Ombros mais largos que os quadris",
+        "caracteristicas" => ["Ombros largos", "Quadris estreitos", "Tronco atlético"],
+        "dicas" => [
+            "Equilibre com volume na parte inferior",
+            "Prefira calças e saias mais volumosas",
+            "Evite ombreiras e mangas bufantes"
+        ]
+    ],
+    "oval" => [
+        "nome" => "Oval (Maçã)",
+        "descricao" => "Tronco mais largo com cintura alta",
+        "caracteristicas" => ["Busto cheio", "Cintura alta", "Pernas finas"],
+        "dicas" => [
+            "Alongue a silhueta com cortes verticais",
+            "Destaque as pernas com saias e vestidos",
+            "Prefira decotes em V e comprimentos midi"
+        ]
+    ],
+    "ampulheta" => [
+        "nome" => "Ampulheta",
+        "descricao" => "Cintura definida com ombros e quadris equilibrados",
+        "caracteristicas" => ["Cintura marcada", "Ombros e quadris proporcionais", "Curvas equilibradas"],
+        "dicas" => [
+            "Valorize a cintura natural",
+            "Use cintos e peças moldantes",
+            "Todos os cortes tendem a ficar bem"
+        ]
+    ]
+];
+
+$produtos_recomendados = [
+    "triangulo" => [
+        [
+            "nome" => "Blusa com Detalhes nos Ombros",
+            "categoria" => "Superiores",
+            "imagem" => "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+            "preco" => 89.90
+        ],
+        [
+            "nome" => "Calça Wide Leg Plus Size",
+            "categoria" => "Inferiores", 
+            "imagem" => "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+            "preco" => 129.90
+        ]
+    ],
+    "retangulo" => [
+        [
+            "nome" => "Vestido com Cinto Incluso",
+            "categoria" => "Vestidos",
+            "imagem" => "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+            "preco" => 149.90
+        ]
+    ]
+];
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontre Seu Estilo - EcoStyle Brechó</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoStyle Brechó</span>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar produtos...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <button class="icon-btn">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="icon-btn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge">2</span>
+                        </button>
+                        <button class="icon-btn">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.php" class="nav-link">Início</a></li>
+                    <li><a href="recomendacao.php" class="nav-link active">Meu Estilo</a></li>
+                    <li><a href="index.php#categorias" class="nav-link">Plus Size</a></li>
+                    <li><a href="index.php#categorias" class="nav-link">Feminino</a></li>
+                    <li><a href="index.php#categorias" class="nav-link">Masculino</a></li>
+                    <li><a href="compras.php" class="nav-link">Carrinho</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="style-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Encontre as <span class="highlight">Roupas Perfeitas</span> para Seu Tipo de Corpo</h1>
+                <p>Descubra peças que valorizam sua silhueta e aumentam sua autoestima</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz de Tipo de Corpo -->
+    <section class="body-type-quiz">
+        <div class="container">
+            <div class="quiz-card">
+                <h2>Descubra Seu Tipo de Corpo</h2>
+                <p>Responda algumas perguntas simples para receber recomendações personalizadas</p>
+                
+                <div class="quiz-step active" id="step1">
+                    <h3>Como são seus ombros em relação aos quadris?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-type="triangulo_invertido">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Ombros mais largos</span>
+                        </button>
+                        <button class="quiz-option" data-type="triangulo">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Quadris mais largos</span>
+                        </button>
+                        <button class="quiz-option" data-type="retangulo">
+                            <i class="fas fa-equals"></i>
+                            <span>Praticamente iguais</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" id="step2">
+                    <h3>Como é sua cintura?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-type="ampulheta">
+                            <i class="fas fa-hourglass"></i>
+                            <span>Bem definida</span>
+                        </button>
+                        <button class="quiz-option" data-type="retangulo">
+                            <i class="fas fa-square"></i>
+                            <span>Pouco definida</span>
+                        </button>
+                        <button class="quiz-option" data-type="oval">
+                            <i class="fas fa-circle"></i>
+                            <span>Mais alta/arredondada</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button class="btn btn-secondary" id="prevBtn" disabled>
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar
+                    </button>
+                    <button class="btn btn-primary" id="nextBtn">
+                        Continuar
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados -->
+    <section class="quiz-results" id="results" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2>Seu Tipo de Corpo: <span id="bodyTypeName"></span></h2>
+                <p id="bodyTypeDescription"></p>
+            </div>
+
+            <div class="results-content">
+                <div class="body-type-info">
+                    <h3>Características Principais</h3>
+                    <ul id="bodyCharacteristics"></ul>
+                    
+                    <h3>Dicas de Estilo</h3>
+                    <ul id="styleTips"></ul>
+                </div>
+
+                <div class="recommended-outfits">
+                    <h3>Peças Recomendadas para Você</h3>
+                    <div class="products-grid" id="recommendedProducts">
+                        <!-- Produtos serão inseridos via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Corpo -->
+    <section class="body-types">
+        <div class="container">
+            <h2 class="section-title">Conheça Todos os Tipos de Corpo</h2>
+            <div class="body-types-grid">
+                <?php foreach($tipos_corpo as $key => $tipo): ?>
+                <div class="body-type-card" data-type="<?php echo $key; ?>">
+                    <div class="body-type-icon">
+                        <?php 
+                        $icons = [
+                            "triangulo" => "fa-female",
+                            "retangulo" => "fa-square",
+                            "triangulo_invertido" => "fa-male",
+                            "oval" => "fa-circle",
+                            "ampulheta" => "fa-hourglass"
+                        ];
+                        ?>
+                        <i class="fas <?php echo $icons[$key]; ?>"></i>
+                    </div>
+                    <h3><?php echo $tipo['nome']; ?></h3>
+                    <p><?php echo $tipo['descricao']; ?></p>
+                    <button class="btn btn-outline see-recommendations" data-type="<?php echo $key; ?>">
+                        Ver Recomendações
+                    </button>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Dados dos tipos de corpo (em PHP seria echo json_encode)
+        const bodyTypes = <?php echo json_encode($tipos_corpo); ?>;
+        const recommendedProducts = <?php echo json_encode($produtos_recomendados); ?>;
+    </script>
+    <script src="recomendacao.js"></script>
+</body>
+</html>
